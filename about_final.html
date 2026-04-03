@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — ClientLabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #1e3a8a;
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #181818;
+      --border: #222222;
+      --text: #f0f0f0;
+      --muted: #888;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 400; line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4,h5 { font-family: 'Inter', sans-serif; line-height: 1.1; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(20px); background: rgba(10,10,10,0.85); border-bottom: 1px solid var(--border); }
+    .accent { color: var(--accent); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #000; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 14px 32px; border-radius: 4px; transition: all 0.2s ease; letter-spacing: 0.02em; text-decoration: none; }
+    .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(30,58,138,0.25); }
+    .tag { display: inline-block; background: rgba(30,58,138,0.1); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
+    .line { width: 40px; height: 2px; background: var(--accent); display: block; margin-bottom: 24px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 32px; transition: border-color 0.2s, transform 0.2s; }
+    .card:hover { border-color: rgba(30,58,138,0.3); transform: translateY(-4px); }
+    hr.dim { border: none; border-top: 1px solid var(--border); }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* Hero BG */
+    .about-hero {
+      background-image: radial-gradient(circle at 80% 30%, rgba(30,58,138,0.07) 0%, transparent 55%);
+    }
+    .principle-num { font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 800; color: rgba(30,58,138,0.12); line-height: 1; margin-bottom: 16px; }
+
+    /* LARGE QUOTE */
+    .pull-quote { font-family: 'Inter', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: #fff; line-height: 1.3; border-left: 3px solid var(--accent); padding-left: 28px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="font-bold text-white text-xl" style="font-family:'Syne',sans-serif; letter-spacing:-0.02em;">
+      Client<span class="accent">Labs</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a>
+      <a href="about.html" class="text-sm text-white">About</a>
+      <a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
+      <a href="contact.html" class="btn-primary" style="padding:10px 22px; font-size:0.85rem;">Book a Call</a>
+    </div>
+    <button class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="flex-col px-6 pb-5 gap-4 md:hidden border-t" style="border-color:var(--border);">
+    <a href="index.html" class="text-sm text-gray-400 hover:text-white py-2">Home</a>
+    <a href="about.html" class="text-sm text-white py-2">About</a>
+    <a href="contact.html" class="text-sm text-gray-400 hover:text-white py-2">Contact</a>
+    <a href="contact.html" class="btn-primary mt-2" style="justify-content:center;">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero pt-40 pb-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="fade-up">
+      <span class="tag">About ClientLabs</span>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white mt-2 mb-8" style="letter-spacing:-0.03em; line-height:1.05;">
+        We do one thing.<br/>We do it well.
+      </h1>
+    </div>
+    <div class="fade-up max-w-2xl">
+      <p class="text-xl text-gray-400 leading-relaxed">
+        ClientLabs is a specialized outbound growth firm for performance marketing agencies in India. Not a full-service agency. Not a generic lead gen company. One niche, one service, one outcome: more qualified sales meetings on your calendar.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE ARE -->
+<section class="py-20 px-6" style="border-top:1px solid var(--border);">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="fade-up">
+        <span class="tag">What We Are</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-6" style="letter-spacing:-0.02em;">Specialists. Not generalists.</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Most lead gen agencies work across every industry imaginable — real estate, SaaS, e-commerce, recruitment. That breadth makes them mediocre at all of it. They don't understand your market, your buyer, or what actually makes a pitch land.
+        </p>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          We built ClientLabs to be the exact opposite. We work only with agencies — specifically, performance marketing and paid media agencies. That means our prospecting criteria, messaging frameworks, sequence logic, and qualifying questions are all dialled in for one specific buyer type.
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Depth beats breadth in B2B outbound. Full stop.
+        </p>
+      </div>
+      <div class="fade-up flex flex-col gap-1">
+        <div class="card mb-0" style="border-radius:'8px 8px 0 0';">
+          <div class="flex justify-between items-center">
+            <span class="text-white font-semibold text-sm" style="font-family:'Syne',sans-serif;">Industries we serve</span>
+            <span class="accent font-bold text-sm">1</span>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">Performance Marketing &amp; Paid Ads Agencies</p>
+        </div>
+        <div class="card">
+          <div class="flex justify-between items-center">
+            <span class="text-white font-semibold text-sm" style="font-family:'Syne',sans-serif;">Geographies we focus on</span>
+            <span class="accent font-bold text-sm">India-first</span>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">Bangalore, Mumbai — and expanding across Tier-1 Indian cities</p>
+        </div>
+        <div class="card">
+          <div class="flex justify-between items-center">
+            <span class="text-white font-semibold text-sm" style="font-family:'Syne',sans-serif;">Service we offer</span>
+            <span class="accent font-bold text-sm">One</span>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">Done-for-you AI outbound: leads → enrichment → outreach → booked meetings</p>
+        </div>
+        <div class="card">
+          <div class="flex justify-between items-center">
+            <span class="text-white font-semibold text-sm" style="font-family:'Syne',sans-serif;">Goal per engagement</span>
+            <span class="accent font-bold text-sm">10–15/mo</span>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">Qualified sales meetings with decision-makers in your ICP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="py-20 px-6" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="max-w-4xl mx-auto fade-up">
+    <p class="pull-quote">
+      "Agencies are some of the best at acquiring clients for others. They're often terrible at acquiring clients for themselves. That gap is where we work."
+    </p>
+    <p class="text-gray-600 text-sm mt-6 ml-8" style="padding-left:28px;">— The thinking behind ClientLabs</p>
+  </div>
+</section>
+
+<!-- OUR PRINCIPLES -->
+<section class="py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="fade-up mb-16">
+      <span class="tag">How We Operate</span>
+      <h2 class="text-4xl font-extrabold text-white mt-2" style="letter-spacing:-0.02em;">Our operating principles.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card fade-up">
+        <div class="principle-num">01</div>
+        <h3 class="text-lg font-bold text-white mb-3">Skin in the game</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">We work free until we deliver. That's not a marketing line — it's how we've structured every engagement. When our revenue is tied to your results, we're aligned. There's no other way we want to operate.</p>
+      </div>
+      <div class="card fade-up" style="transition-delay:0.1s;">
+        <div class="principle-num">02</div>
+        <h3 class="text-lg font-bold text-white mb-3">Clarity over cleverness</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">We don't impress you with jargon or hide behind process decks. You'll always know what we're doing, why we're doing it, and what we expect to happen next. No black boxes, no vague deliverables.</p>
+      </div>
+      <div class="card fade-up" style="transition-delay:0.2s;">
+        <div class="principle-num">03</div>
+        <h3 class="text-lg font-bold text-white mb-3">Quality over volume</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">10 genuine meetings with real decision-makers is worth more than 50 calls with people who don't have a budget or buying authority. We'd rather book fewer meetings and have you close more than flood your calendar with noise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="py-24 px-6" style="background:var(--surface); border-top:1px solid var(--border);">
+  <div class="max-w-4xl mx-auto">
+    <div class="fade-up mb-12">
+      <span class="tag">Ideal Fit</span>
+      <h2 class="text-4xl font-extrabold text-white mt-2 mb-4" style="letter-spacing:-0.02em;">Who this is built for.</h2>
+      <p class="text-gray-500 max-w-xl">We're not for everyone. Here's who gets the most out of working with us.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="flex gap-4 items-start fade-up p-6 rounded-lg" style="background:var(--surface2); border:1px solid var(--border);">
+        <div class="flex-shrink-0 mt-1">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-1">You run a performance marketing agency</h4>
+          <p class="text-gray-500 text-xs leading-relaxed">Google Ads, Meta/Facebook Ads, programmatic, or full paid media. You deliver measurable results for your clients and want more of them.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start fade-up p-6 rounded-lg" style="background:var(--surface2); border:1px solid var(--border);">
+        <div class="flex-shrink-0 mt-1">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-1">You're based in India — preferably Bangalore or Mumbai</h4>
+          <p class="text-gray-500 text-xs leading-relaxed">Our outreach system and ICP targeting is calibrated for the Indian market. Local context makes a meaningful difference.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start fade-up p-6 rounded-lg" style="background:var(--surface2); border:1px solid var(--border);">
+        <div class="flex-shrink-0 mt-1">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-1">You have capacity to take on 3–5 new clients</h4>
+          <p class="text-gray-500 text-xs leading-relaxed">We're filling your pipeline, not just your calendar. You need to be ready to close and onboard. If you're at 100% capacity, wait until you're not.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start fade-up p-6 rounded-lg" style="background:var(--surface2); border:1px solid var(--border);">
+        <div class="flex-shrink-0 mt-1">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-1">You want a predictable, repeatable growth channel</h4>
+          <p class="text-gray-500 text-xs leading-relaxed">Referrals are a bonus. Outbound is a system. You want the latter — something you can rely on month after month regardless of who happens to mention your name.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 px-6">
+  <div class="max-w-3xl mx-auto text-center fade-up">
+    <span class="tag">Ready?</span>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-4 mb-6" style="letter-spacing:-0.02em; line-height:1.1;">
+      If this sounds like the right fit, let's talk.
+    </h2>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto">
+      A 30-minute call is all it takes to figure out if we're a match. We'll walk through your current pipeline, what your ideal client looks like, and exactly how we'd approach outbound for your agency.
+    </p>
+    <a href="contact.html" class="btn-primary text-base" style="padding:16px 40px;">
+      Book a Free Strategy Call
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="px-6 py-10" style="border-top:1px solid var(--border);">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <a href="index.html" class="font-bold text-white text-lg" style="font-family:'Syne',sans-serif;">Client<span class="accent">Labs</span></a>
+    <div class="flex gap-8">
+      <a href="index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a>
+      <a href="about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a>
+      <a href="contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a>
+    </div>
+    <p class="text-xs text-gray-600">© 2025 ClientLabs. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
